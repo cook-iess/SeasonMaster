@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shopping_as_lists",
+  "info": {
+    "singularName": "shopping-as-list",
+    "pluralName": "shopping-as-lists",
+    "displayName": "shoppingAsList"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "who": {
+      "type": "string",
+      "required": true
+    },
+    "why": {
+      "type": "text",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "buttonText": {
+      "type": "string",
+      "required": true
+    },
+    "shopping_a": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::shopping-as.shopping-as",
+      "inversedBy": "shopping_as_lists"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

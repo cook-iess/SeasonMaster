@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "testimonialss",
+  "info": {
+    "singularName": "testimonials",
+    "pluralName": "testimonialss",
+    "displayName": "testimonials"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Header": {
+      "type": "string",
+      "required": true
+    },
+    "testimonials_lists": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::testimonials-list.testimonials-list",
+      "mappedBy": "testimonial"
+    }
+  }
+}

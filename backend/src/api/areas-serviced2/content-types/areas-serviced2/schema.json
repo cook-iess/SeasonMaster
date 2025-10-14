@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "areas_serviced2s",
+  "info": {
+    "singularName": "areas-serviced2",
+    "pluralName": "areas-serviced2s",
+    "displayName": "areas-serviced2"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "area": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "state1": {
+      "type": "string",
+      "required": true
+    },
+    "state2": {
+      "type": "string",
+      "required": true
+    },
+    "state3": {
+      "type": "string",
+      "required": true
+    },
+    "state4": {
+      "type": "string"
+    },
+    "state5": {
+      "type": "string"
+    },
+    "Icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "Icon2": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

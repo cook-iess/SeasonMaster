@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "windows_range_lists",
+  "info": {
+    "singularName": "windows-range-list",
+    "pluralName": "windows-range-lists",
+    "displayName": "windowsRangeList"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "subtitle": {
+      "type": "string",
+      "required": true
+    },
+    "subDescription": {
+      "type": "text",
+      "required": true
+    },
+    "windows_range": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::windows-range.windows-range",
+      "inversedBy": "windows_range_lists"
+    }
+  }
+}

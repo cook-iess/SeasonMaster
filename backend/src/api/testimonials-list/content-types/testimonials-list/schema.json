@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "testimonials_lists",
+  "info": {
+    "singularName": "testimonials-list",
+    "pluralName": "testimonials-lists",
+    "displayName": "testimonialsList"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "review": {
+      "type": "text",
+      "required": true
+    },
+    "reviewer": {
+      "type": "string",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "testimonial": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::testimonials.testimonials",
+      "inversedBy": "testimonials_lists"
+    }
+  }
+}

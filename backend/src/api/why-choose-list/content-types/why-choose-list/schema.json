@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "why_choose_lists",
+  "info": {
+    "singularName": "why-choose-list",
+    "pluralName": "why-choose-lists",
+    "displayName": "whyChooseList"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "cardTitle": {
+      "type": "string",
+      "required": true
+    },
+    "cardDescription": {
+      "type": "text",
+      "required": true
+    },
+    "why_choose": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::why-choose.why-choose",
+      "inversedBy": "why_choose_lists"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "kind": "singleType",
+  "collectionName": "google_ratings",
+  "info": {
+    "singularName": "google-rating",
+    "pluralName": "google-ratings",
+    "displayName": "googleRating"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "socialIcon": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "socialName": {
+      "type": "string",
+      "required": true
+    },
+    "ratingDesc": {
+      "type": "string"
+    },
+    "addDesc": {
+      "type": "string"
+    },
+    "stars": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "ratedText": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

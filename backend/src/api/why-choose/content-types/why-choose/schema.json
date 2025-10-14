@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "why_chooses",
+  "info": {
+    "singularName": "why-choose",
+    "pluralName": "why-chooses",
+    "displayName": "whyChoose"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "why_choose_lists": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::why-choose-list.why-choose-list",
+      "mappedBy": "why_choose"
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "kind": "singleType",
+  "collectionName": "areas_serviceds",
+  "info": {
+    "singularName": "areas-serviced",
+    "pluralName": "areas-serviceds",
+    "displayName": "areas-serviced"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "subTitle1": {
+      "type": "string",
+      "required": true
+    },
+    "subDescription1": {
+      "type": "text",
+      "required": true
+    },
+    "subTitle2": {
+      "type": "string",
+      "required": true
+    },
+    "subDescription2": {
+      "type": "text",
+      "required": true
+    },
+    "Icon": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "buttonText": {
+      "type": "string",
+      "required": true
+    },
+    "mapimage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

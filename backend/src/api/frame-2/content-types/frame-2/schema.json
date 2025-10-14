@@ -1,0 +1,34 @@
+{
+  "kind": "singleType",
+  "collectionName": "frame_2s",
+  "info": {
+    "singularName": "frame-2",
+    "pluralName": "frame-2s",
+    "displayName": "underHeroSection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Icon": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

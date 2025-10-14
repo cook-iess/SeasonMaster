@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "windows_ranges",
+  "info": {
+    "singularName": "windows-range",
+    "pluralName": "windows-ranges",
+    "displayName": "windowsRange"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "windows_range_lists": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::windows-range-list.windows-range-list",
+      "mappedBy": "windows_range"
+    },
+    "Icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}
