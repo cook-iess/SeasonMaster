@@ -17,3 +17,12 @@ export async function fetchGoogleRating() {
   if (!res.ok) throw new Error('Failed to fetch Google rating');
   return res.json();
 }
+
+// Fetch content under hero section
+export async function fetchUnderHero() {
+  const res = await fetch(`${STRAPI_URL}/api/frame-2s?populate=*`, {
+    next: { revalidate: 3600 },
+  });
+  if (!res.ok) throw new Error('Failed to fetch Frame 2 data');
+  return res.json();
+}

@@ -540,7 +540,7 @@ export interface ApiAreasServiced2AreasServiced2
   };
 }
 
-export interface ApiFrame2Frame2 extends Struct.SingleTypeSchema {
+export interface ApiFrame2Frame2 extends Struct.CollectionTypeSchema {
   collectionName: 'frame_2s';
   info: {
     displayName: 'underHeroSection';

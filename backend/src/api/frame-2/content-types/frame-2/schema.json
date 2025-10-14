@@ -1,5 +1,5 @@
 {
-  "kind": "singleType",
+  "kind": "collectionType",
   "collectionName": "frame_2s",
   "info": {
     "singularName": "frame-2",
