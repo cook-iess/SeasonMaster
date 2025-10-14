@@ -1,4 +1,4 @@
-import { UnderHeroData } from '@/lib/types';
+import { UnderHeroData } from '@/lib/Home/types';
 import Image from 'next/image';
 
 type UnderHeroProps = {

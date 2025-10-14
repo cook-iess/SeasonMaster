@@ -1,4 +1,4 @@
-import { HomePageData, GoogleRatingData } from '@/lib/types';
+import { HomePageData, GoogleRatingData } from '@/lib/Home/types';
 import Image from 'next/image';
 import { Plus_Jakarta_Sans } from 'next/font/google';
 
