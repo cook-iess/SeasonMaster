@@ -24,16 +24,6 @@
       "relation": "oneToMany",
       "target": "api::windows-range-list.windows-range-list",
       "mappedBy": "windows_range"
-    },
-    "Icon": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
     }
   }
 }

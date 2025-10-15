@@ -4,15 +4,17 @@ import { fetchAreasServiced, fetchRegions } from "@/lib/AreasServiced/Strapi";
 import { fetchTrustedSection } from "@/lib/Trusted/Stripe";
 import { fetchWindowsRange } from "@/lib/WindowsRange/Stripe";
 import { fetchShoppingAsSection } from "@/lib/WhoBuy/Stripe";
+import { fetchWhyChooseSection } from "@/lib/WhyChoose/Stripe";
 import UnderHeroSec from "@/components/Home/underHeroSec";
 import AreasWeService from "@/components/AreasWeService";
 import WindowRangeSection from "@/components/WindowsRange";
 import TrustedSection from "@/components/TrustedSection";
 import ShoppingAs from "@/components/ShoppingAs";
+import WhyChooseSection from "@/components/WhychooseUs";
 
 export default async function HomePage() {
   const [homeRes, ratingRes, underHeroRes, areasRes,
-    regionsRes, windowsRangeRes, trustedRes, shoppingAsRes, ] = await Promise.all([
+    regionsRes, windowsRangeRes, trustedRes, shoppingAsRes, whyChooseRes,] = await Promise.all([
       fetchHomePage(),
       fetchGoogleRating(),
       fetchUnderHero(),
@@ -20,7 +22,8 @@ export default async function HomePage() {
       fetchRegions(),
       fetchWindowsRange(),
       fetchTrustedSection(),
-      fetchShoppingAsSection(), 
+      fetchShoppingAsSection(),
+      fetchWhyChooseSection(),
     ]);
 
   const home = homeRes.data;
@@ -31,6 +34,7 @@ export default async function HomePage() {
   const windowsRangeData = windowsRangeRes.data[0];
   const trustedData = trustedRes.data;
   const shoppingAsData = shoppingAsRes.data[0];
+  const whyChooseData = whyChooseRes.data[0];
 
   return (
     <main className="bg-white">
@@ -44,6 +48,7 @@ export default async function HomePage() {
       <WindowRangeSection data={windowsRangeData} />
       <TrustedSection data={trustedData} />
       <ShoppingAs data={shoppingAsData} />
+      <WhyChooseSection data={whyChooseData} />
       {/* will continue */}
     </main>
   );
