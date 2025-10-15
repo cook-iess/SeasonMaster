@@ -4,7 +4,7 @@ import * as React from "react"
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from "embla-carousel-react"
-import { ArrowLeft, ArrowRight } from "lucide-react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -173,19 +173,15 @@ function CarouselItem({ className, ...props }: React.ComponentProps<"div">) {
 
 function CarouselPrevious({
   className,
-  variant = "outline",
-  size = "icon",
   ...props
 }: React.ComponentProps<typeof Button>) {
   const { orientation, scrollPrev, canScrollPrev } = useCarousel()
 
   return (
-    <Button
+    <button
       data-slot="carousel-previous"
-      variant={variant}
-      size={size}
       className={cn(
-        "absolute size-8 rounded-full",
+        "absolute flex items-center justify-center rounded-full bg-[#F5F5F5] text-[#19857F] w-10 h-10",
         orientation === "horizontal"
           ? "top-1/2 -left-12 -translate-y-1/2"
           : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
@@ -193,29 +189,25 @@ function CarouselPrevious({
       )}
       disabled={!canScrollPrev}
       onClick={scrollPrev}
+      aria-label="Previous slide"
       {...props}
     >
-      <ArrowLeft />
-      <span className="sr-only">Previous slide</span>
-    </Button>
+      <ChevronLeft className="text-[#19857F]" size={24} strokeWidth={1.5}/>
+    </button>
   )
 }
 
 function CarouselNext({
   className,
-  variant = "outline",
-  size = "icon",
   ...props
 }: React.ComponentProps<typeof Button>) {
   const { orientation, scrollNext, canScrollNext } = useCarousel()
 
   return (
-    <Button
+    <button
       data-slot="carousel-next"
-      variant={variant}
-      size={size}
       className={cn(
-        "absolute size-8 rounded-full",
+        "absolute flex items-center justify-center rounded-full bg-[#F5F5F5] text-[#19857F] w-10 h-10",
         orientation === "horizontal"
           ? "top-1/2 -right-12 -translate-y-1/2"
           : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
@@ -223,11 +215,11 @@ function CarouselNext({
       )}
       disabled={!canScrollNext}
       onClick={scrollNext}
+      aria-label="Next slide"
       {...props}
     >
-      <ArrowRight />
-      <span className="sr-only">Next slide</span>
-    </Button>
+      <ChevronRight className="text-[#19857F]" size={24} strokeWidth={1.5}/>
+    </button>
   )
 }
 

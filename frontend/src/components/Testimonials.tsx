@@ -37,7 +37,7 @@ export default function TestimonialsSection({
 
     return (
         <section className="px-12 py-18">
-            <div className="max-w-6xl mx-auto  space-y-8">
+            <div className="mx-auto  space-y-8">
                 <h2 className="text-[44px] font-bold text-[#1C3960] text-center mb-8 md:mb-12">{Header}</h2>
 
                 <div className="space-y-6">
@@ -47,13 +47,13 @@ export default function TestimonialsSection({
                             align: "start",
                             slidesToScroll: 1,
                         }}
-                        className="w-full max-w-4xl mx-auto"
+                        className="w-full max-w-[70%] mx-auto"
                     >
                         <CarouselContent className="-ml-4">
                             {testimonials.map((item) => (
-                                <CarouselItem key={item.id} className="pl-4 basis-full sm:basis-1/2 md:basis-1/3">
-                                    <div className="p-6 bg-white rounded-xl shadow-sm h-full">
-                                        <div className="flex justify-center mb-3">
+                                <CarouselItem key={item.id} className="pl-4 max-w-80">
+                                    <div className="p-4 bg-[#EAFCFB] rounded-md shadow-sm h-full space-y-2.5">
+                                        <div className="flex mb-3">
                                             <Image
                                                 src={starsImageUrl}
                                                 alt="5 stars"
@@ -62,16 +62,22 @@ export default function TestimonialsSection({
                                                 className="object-contain"
                                             />
                                         </div>
-                                        <p className="text-gray-700 italic mb-4">"{item.review}"</p>
-                                        <p className="font-medium text-gray-900">
-                                            {item.reviewer}, {formatDate(item.date)}
-                                        </p>
+                                        <p className="text-[#0A1422] font-light text-base">{item.review}</p>
+                                        <div className="border-t-[0.5px] border-[#1C3960]/20"></div>
+                                        <div className="flex justify-between">
+                                            <p className="font-bold text-sm text-[#152B48]">
+                                                {item.reviewer}
+                                            </p>
+                                            <p className="text-sm text-[#0A1422]">
+                                                {formatDate(item.date)}
+                                            </p>
+                                        </div>
                                     </div>
                                 </CarouselItem>
                             ))}
                         </CarouselContent>
-                        <CarouselPrevious className="-left-6" />
-                        <CarouselNext className="-right-6" />
+                        <CarouselPrevious className="-left-16" />
+                        <CarouselNext className="-right-16" />
                     </Carousel>
 
                     {/* Rating */}
