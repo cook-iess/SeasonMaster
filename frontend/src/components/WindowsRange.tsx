@@ -55,7 +55,7 @@ export default function WindowRangeSection({
     const { title, description, windows_range_lists: items } = data;
 
     return (
-        <section className="mx-auto px-4 sm:px-6 lg:px-12 py-18">
+        <section className="mx-auto px-4 md:px-12 md:py-18 pt-12 md:pt-18 pb-18">
             <div className="max-w-[769px]">
                 <h2 className="text-3xl md:text-[44px] font-bold text-[#1C3960] pb-2">
                     {title}
