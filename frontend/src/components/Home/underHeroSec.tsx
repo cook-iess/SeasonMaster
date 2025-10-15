@@ -22,7 +22,7 @@ const getIconComponent = (title: string) => {
 
 export default function UnderHeroSec({ items }: UnderHeroProps) {
   return (
-    <section className="px-12 pt-16 pb-18 max-w-[1512px] h-fit mx-auto">
+    <section className="px-12 pt-4 pb-18 h-fit">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
         {items.map((item) => (
           <div

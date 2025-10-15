@@ -7,44 +7,43 @@ type TrustedSectionProps = {
 
 export default function TrustedSection({ data }: TrustedSectionProps) {
     const STRAPI_URL = process.env.STRAPI_URL || 'http://localhost:1337';
-
     const bgImageUrl = STRAPI_URL + data.imageBg.url;
-    const logos = data.Logos.map((logo) => ({
-        id: logo.id,
-        url: STRAPI_URL + logo.url,
-        alt: logo.alternativeText || 'Certification logo',
-    }));
 
     return (
         <section
-            className="relative w-full h-[679px] bg-cover bg-center"
+            className="relative w-full py-16 md:py-34 bg-cover bg-center"
             style={{ backgroundImage: `url(${bgImageUrl})` }}
         >
-            {/* Centered glass card */}
-            <div className="absolute inset-0 flex items-center justify-center p-4">
-                <div className="bg-white/80 backdrop-blur-lg rounded-2xl mx-72 my-40 p-10 shadow w-full text-center">
-                    <div className='mt-10 my-10 mb-6'>
-                        <h2 className="text-5xl text-[#1C3960] font-bold mb-6">
+            <div className="absolute inset-0"></div>
+            <div className="relative z-10 flex items-center justify-center px-4">
+                <div className="bg-white/80 backdrop-blur-lg rounded-2xl text-center w-full max-w-[940px] px-10 pb-10 pt-3">
+                    <div className="mb-6 mt-10">
+                        <h2 className="text-3xl sm:text-5xl md:text-5xl font-bold text-[#1C3960] px-2 pb-3">
                             {data.title}
                         </h2>
-                        <p className="text-lg text-[#333333] leading-relaxed max-w-2xl mx-auto">
+                        <p className="text-base sm:text-lg text-[#333333] max-w-2xl mx-auto px-2">
                             {data.description}
                         </p>
                     </div>
 
-                    <div className="flex justify-center gap-x-8">
-                        {logos.map((logo, index) => (
-                            <div key={logo.id} className="flex-shrink-0">
-                                <Image
-                                    src={logo.url}
-                                    alt={logo.alt}
-                                    width={index === logos.length - 1 ? 160 : 213}
-                                    height={index === logos.length - 1 ? Math.round((160 / 213) * 114) : 114}
-                                    className="object-contain"
-                                    loading="lazy"
-                                />
-                            </div>
-                        ))}
+                    <div className="flex justify-center">
+                        <div className="flex flex-nowrap justify-center gap-4 sm:gap-6 w-full max-w-4xl">
+                            {data.Logos.map((logo, index) => {
+                                const isLast = index === data.Logos.length - 1;
+                                return (
+                                    <div key={logo.id} className="flex-shrink-0">
+                                        <Image
+                                            src={STRAPI_URL + logo.url}
+                                            alt={logo.alternativeText || 'Certification logo'}
+                                            width={isLast ? 161 : 213}
+                                            height={114}
+                                            className="w-auto h-[80px] sm:h-[90px] md:h-[114px] object-contain"
+                                            loading="lazy"
+                                        />
+                                    </div>
+                                );
+                            })}
+                        </div>
                     </div>
                 </div>
             </div>
