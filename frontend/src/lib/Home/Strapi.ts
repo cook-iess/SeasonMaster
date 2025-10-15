@@ -20,7 +20,7 @@ export async function fetchGoogleRating() {
 
 // Fetch content under hero section
 export async function fetchUnderHero() {
-  const res = await fetch(`${STRAPI_URL}/api/frame-2s?populate=*`, {
+  const res = await fetch(`${STRAPI_URL}/api/frame-2s`, {
     next: { revalidate: 3600 },
   });
   if (!res.ok) throw new Error('Failed to fetch Frame 2 data');

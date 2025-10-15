@@ -11,17 +11,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Icon": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "title": {
       "type": "string",
       "required": true

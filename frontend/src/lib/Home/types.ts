@@ -25,14 +25,8 @@ export type GoogleRatingData = {
   };
 };
 
-export type UnderHeroIcon = {
-  url: string;
-  alternativeText?: string | null;
-};
-
 export type UnderHeroData = {
   id: number;
   title: string;
   description: string;
-  Icon: UnderHeroIcon;
 };
