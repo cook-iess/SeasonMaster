@@ -24,7 +24,7 @@ export default function ShoppingAs({ data }: { data: ShoppingAsData }) {
     const [left, right] = items;
 
     return (
-        <section className="py-18 px-10">
+        <section className="py-18 px-10 max-w-[1512px] mx-auto">
             <div className="">
                 <div className="mb-10 space-y-2">
                     <h2 className="text-3xl md:text-[44px] font-bold text-[#1C3960]">{title}</h2>
