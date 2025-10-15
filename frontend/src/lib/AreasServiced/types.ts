@@ -1,9 +1,3 @@
-// For content
-export type AreasServicedIcon = {
-  url: string;
-  alternativeText?: string | null;
-};
-
 export type AreasServicedMapImage = {
   url: string;
   alternativeText?: string | null;
@@ -18,7 +12,6 @@ export type AreasServicedData = {
   subDescription1: string;
   subTitle2: string;
   subDescription2: string;
-  Icon: AreasServicedIcon;
   mapimage: AreasServicedMapImage;
 };
 
