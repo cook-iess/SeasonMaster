@@ -5,38 +5,43 @@ type UnderHeroProps = {
   items: UnderHeroData[];
 };
 
-const getIconComponent = (title: string) => {
+const IconByTitle = ({ title, size }: { title: string; size: number }) => {
   const normalized = title.toLowerCase();
+  const props = { size, color: "#20A69E" };
   if (normalized.includes('quiet')) {
-    return <VolumeOffIcon size={40} color="#20A69E" />;
+    return <VolumeOffIcon {...props} />;
   }
   if (normalized.includes('thermal') || normalized.includes('temperature')) {
-    return <ThermometerWarmIcon size={40} color="#20A69E" />;
+    return <ThermometerWarmIcon {...props} />;
   }
   if (normalized.includes('secure') || normalized.includes('security')) {
-    return <SecurityCheckIcon size={40} color="#20A69E" />;
+    return <SecurityCheckIcon {...props} />;
   }
-  // fallback
-  return <VolumeOffIcon size={40} color="#20A69E" />;
+  return <VolumeOffIcon {...props} />;
 };
 
 export default function UnderHeroSec({ items }: UnderHeroProps) {
   return (
-    <section className="px-12 pt-4 pb-18 h-fit">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+    <section className="md:px-12 md:pt-4 md:pb-18 h-fit p-4 space-y-2 md:space-y-0">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:gap-x-10 md:gap-y-10 gap-y-2">
         {items.map((item) => (
           <div
             key={item.id}
             className="gap-8 px-4 py-2 gap-y-2"
           >
-            <div className="flex-shrink-0">
-              {getIconComponent(item.title)}
-            </div>
+            {/* Mobile icon (24px) */}
+              <div className="md:hidden block">
+                <IconByTitle title={item.title} size={24} />
+              </div>
+              {/* Desktop icon (40px) */}
+              <div className="md:block hidden">
+                <IconByTitle title={item.title} size={40} />
+              </div>
             <div className="text-left">
-              <h3 className="font-bold text-xl leading-tight mt-2 pb-1 text-[#1C3960]">
+              <h3 className="font-bold md:text-xl text-lg leading-tight mt-2 pb-1 text-[#1C3960]">
                 {item.title.trim()}
               </h3>
-              <p className="text-[#333333] text-sm leading-relaxed">
+              <p className="text-[#333333] md:text-sm text-xs leading-relaxed">
                 {item.description}
               </p>
             </div>
