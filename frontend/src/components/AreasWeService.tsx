@@ -26,85 +26,85 @@ export default function AreasWeService({
     const midlands = getRegion('Midlands');
     const south = getRegion('South');
 
+    // Keep RegionCard simple — no mobile variant
     const RegionCard = ({
-  title,
-  cities,
-  positionClasses,
-}: {
-  title: string;
-  cities: string[];
-  positionClasses: string;
-}) => (
-  <div className={`absolute ${positionClasses} bg-[#22B1A9] p-4 rounded-lg shadow-md min-w-[180px] border border-white`}>
-    <div className="flex items-center gap-2 mb-3">
-      <Location06Icon size={20} color='#FFFFFF'/>
-      <h4 className="font-semibold text-lg text-white">{title}</h4>
-    </div>
-    
-    {/* ✅ VERTICAL LIST: flex-col instead of flex-wrap */}
-    <div className="flex flex-col gap-1">
-      {cities.map((city, i) => (
-        <div key={i} className="flex items-center gap-2 text-white">
-          <Tick01Icon size={20} />
-          <span className="text-sm">{city}</span>
+        title,
+        cities,
+        positionClasses,
+    }: {
+        title: string;
+        cities: string[];
+        positionClasses: string;
+    }) => (
+        <div className={`absolute ${positionClasses} bg-[#22B1A9] p-3 sm:p-4 rounded-lg shadow-md min-w-[140px] sm:min-w-[180px] border border-white z-10`}>
+            <div className="flex items-center gap-1.5 sm:gap-2 mb-2">
+                {/* ✅ Fixed: no sm:size — just one size that works */}
+                <Location06Icon size={18} color='#FFFFFF' />
+                <h4 className="font-semibold text-sm sm:text-base text-white">{title}</h4>
+            </div>
+            <div className="flex flex-col gap-0.5 sm:gap-1">
+                {cities.map((city, i) => (
+                    <div key={i} className="flex items-center gap-1.5 text-white">
+                        <Tick01Icon size={16} />
+                        <span className="text-xs sm:text-sm">{city}</span>
+                    </div>
+                ))}
+            </div>
         </div>
-      ))}
-    </div>
-  </div>
-);
+    );
 
     return (
-        <section className="px-14 py-18 gap-x-10 max-w-[1512px] mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-14 items-start">
+        <section className="px-4 md:px-12 py-12 md:py-18 max-w-[1512px] mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 lg:gap-x-14 sm:gap-y-4 items-start">
                 {/* Left Side */}
-                <div className="gap-y-16 text-[#333333] my-auto">
-                    <div>
-                        <h2 className="text-[44px] leading-[1.2] text-[#1C3960] font-bold py-2">{mainData.title}</h2>
-                        <p className=" text-lg">{mainData.description}</p>
-                    </div>
+                <div className="text-[#333333] my-auto">
+                    <h2 className="text-[24px] md:text-[40px] lg:text-[44px] leading-[1.2] text-[#1C3960] font-bold py-2">
+                        {mainData.title}
+                    </h2>
+                    <p className="text-base sm:text-sm mb-6">{mainData.description}</p>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-10 mt-6 mb-8">
-                        <div className="gap-y-2">
-                            <h3 className="font-bold text-base mb-2">{mainData.subTitle1}</h3>
-                            <p className="text-sm">{mainData.subDescription1}</p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 sm:gap-y-4 mt-4 mb-8">
+                        <div>
+                            <h3 className="font-bold text-base mb-2 text-[#1C3960]">{mainData.subTitle1}</h3>
+                            <p className="md:text-sm text-xs">{mainData.subDescription1}</p>
                         </div>
-                        <div className="gap-y-2">
+                        <div>
                             <h3 className="font-bold text-base mb-2 text-[#1C3960]">{mainData.subTitle2}</h3>
-                            <p className="text-sm">{mainData.subDescription2}</p>
+                            <p className="md:text-sm text-xs">{mainData.subDescription2}</p>
                         </div>
                     </div>
 
                     {/* Button + Rating */}
-                    <div className="space-y-6">
-                        <button className="flex items-center gap-3 bg-[#0284A3] text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-[#026f8a] transition">
-                            <Location06Icon size={24} color='#FFFFFF' />
+                    <div className="space-y-5">
+                        <button className="flex items-center justify-center bg-[#0284A3] mb-4 md:gap-x-3 w-full md:w-fit gap-x-2 text-white font-semibold md:px-10 md:py-4 px-8 py-3 md:rounded-lg rounded-md shadow-md hover:bg-[#026f8a] transition md:text-lg text-sm">
+                            <Location06Icon size={20} color='#FFFFFF' />
                             {mainData.buttonText}
                         </button>
 
                         <div>
-                            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-x-2">
+                            <div className="flex flex-row items-center gap-2">
                                 <Image
                                     src={googleLogoUrl}
                                     alt={rating.socialName}
-                                    width={32}
-                                    height={32}
+                                    width={28}
+                                    height={28}
                                     className="object-contain"
                                 />
                                 <Image
                                     src={starsImageUrl}
                                     alt="5-star rating"
-                                    width={90}
-                                    height={18}
+                                    width={80}
+                                    height={16}
                                     className="object-contain"
                                 />
                             </div>
-                            <p className="text-gray-600 text-base">{rating.addDesc}</p>
+                            <p className="text-black text-sm sm:text-base mt-1">{rating.addDesc}</p>
                         </div>
                     </div>
                 </div>
 
-                {/* Right Side */}
-                <div className="relative w-full h-[500px]">
+                {/* Right Side - Map with Absolute Cards */}
+                <div className="relative w-full mt-12 lg:mt-0 h-[400px] sm:h-[450px] lg:h-[500px]">
                     <Image
                         src={mapImageUrl}
                         alt="UK Map with coverage areas"
@@ -117,21 +117,21 @@ export default function AreasWeService({
                         <RegionCard
                             title={north.area}
                             cities={[north.state1, north.state2, north.state3, north.state4, north.state5]}
-                            positionClasses="top-0 right-30"
+                            positionClasses="top-2 right-[25%] sm:top-0 sm:right-[120px]"
                         />
                     )}
                     {midlands && (
                         <RegionCard
                             title={midlands.area}
                             cities={[midlands.state1, midlands.state2, midlands.state3, midlands.state4, midlands.state5]}
-                            positionClasses="top-3/4 left-15 transform -translate-y-1/2"
+                            positionClasses="top-[70%] left-[20%] sm:top-3/4 sm:left-[60px] transform -translate-y-1/2"
                         />
                     )}
                     {south && (
                         <RegionCard
                             title={south.area}
                             cities={[south.state1, south.state2, south.state3, south.state4, south.state5]}
-                            positionClasses="-bottom-14 right-26"
+                            positionClasses="bottom-[-50px] right-[22%] sm:bottom-[-56px] sm:right-[104px]"
                         />
                     )}
                 </div>
