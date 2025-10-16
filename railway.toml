@@ -1,8 +1,0 @@
-# railway.toml (place in project root: SeasonMaster/railway.toml)
-[build]
-  builder = "NIXPACKS"
-
-[deploy]
-  startCommand = "npm run develop"
-  # This tells Railway: "the app lives in /backend"
-  workingDirectory = "backend"
