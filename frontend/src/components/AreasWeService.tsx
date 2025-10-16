@@ -36,18 +36,24 @@ export default function AreasWeService({
         cities: string[];
         positionClasses: string;
     }) => (
-        <div className={`absolute ${positionClasses} bg-[#22B1A9] hover:opacity-95 duration-300 p-3 sm:p-4 rounded-lg shadow-md min-w-[140px] sm:min-w-[180px] border border-white z-10`}>
-            <div className="flex items-center gap-1.5 sm:gap-2 mb-2">
-                <Location06Icon size={18} color='#FFFFFF' />
-                <h4 className="font-semibold text-sm sm:text-base text-white">{title}</h4>
+        <div
+            className={`absolute ${positionClasses} bg-[#22B1A9] py-2 px-3 sm:py-2.5 sm:px-3.5 rounded-lg shadow-md border border-white z-10 inline-block`}
+        >
+            <div className="flex items-start gap-1.5 mb-1">
+                <Location06Icon size={18} color="#FFFFFF" className="mt-0.5 flex-shrink-0 my-auto" />
+                <h4 className="font-semibold text-[11px] md:text-lg text-white">
+                    {title}
+                </h4>
             </div>
-            <div className="flex flex-col gap-0.5 sm:gap-1">
-                {cities.map((city, i) => (
-                    <div key={i} className="flex items-center gap-1.5 text-white">
-                        <Tick01Icon size={16} />
-                        <span className="text-xs sm:text-sm">{city}</span>
-                    </div>
-                ))}
+            <div className="flex flex-col gap-0.5">
+                {cities
+                    .filter(Boolean)
+                    .map((city, i) => (
+                        <div key={i} className="flex items-start gap-1.5 text-white">
+                            <Tick01Icon size={16} className="mt-0.5 flex-shrink-0" />
+                            <span className="text-[8.61px] md:text-[13px] leading-tight">{city}</span>
+                        </div>
+                    ))}
             </div>
         </div>
     );
@@ -115,21 +121,21 @@ export default function AreasWeService({
                         <RegionCard
                             title={north.area}
                             cities={[north.state1, north.state2, north.state3, north.state4, north.state5]}
-                            positionClasses="top-2 right-[25%] sm:top-0 sm:right-[120px]"
+                            positionClasses="-top-4 right-[8%] md:-top-4 md:right-[124px]"
                         />
                     )}
                     {midlands && (
                         <RegionCard
                             title={midlands.area}
                             cities={[midlands.state1, midlands.state2, midlands.state3, midlands.state4, midlands.state5]}
-                            positionClasses="top-[70%] left-[20%] sm:top-3/4 sm:left-[60px] transform -translate-y-1/2"
+                            positionClasses="top-[70%] left-[5%] md:top-[67%] md:left-[110px] transform -translate-y-1/2"
                         />
                     )}
                     {south && (
                         <RegionCard
                             title={south.area}
                             cities={[south.state1, south.state2, south.state3, south.state4, south.state5]}
-                            positionClasses="bottom-[-50px] right-[22%] sm:bottom-[-56px] sm:right-[104px]"
+                            positionClasses="bottom-[-20px] right-[10%] md:bottom-[-16px] md:right-[164px]"
                         />
                     )}
                 </div>
