@@ -62,19 +62,23 @@ export default function AreasWeService({
         <section className="px-4 md:px-12 py-12 md:py-18 max-w-[1512px] mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 lg:gap-x-14 sm:gap-y-4 items-start">
                 {/* Left Side */}
-                <div className={`text-[${COLORS.bodyText}] my-auto`}>
-                    <h2 className={`text-[24px] md:text-[40px] lg:text-[44px] leading-[1.2] text-[${COLORS.headingText}] font-bold py-2`}>
+                <div className="my-auto"
+                    style={{ color: COLORS.bodyText }}>
+                    <h2 className="text-[24px] md:text-[40px] lg:text-[44px] leading-[1.2] font-bold py-2"
+                        style={{ color: COLORS.headingText }}>
                         {mainData.title}
                     </h2>
                     <p className="text-base sm:text-sm mb-6">{mainData.description}</p>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 sm:gap-y-4 mt-4 mb-8">
                         <div>
-                            <h3 className={`font-bold text-base mb-2 text-[${COLORS.headingText}]`}>{mainData.subTitle1}</h3>
+                            <h3 className="font-bold text-base mb-2"
+                                style={{ color: COLORS.headingText }}>{mainData.subTitle1}</h3>
                             <p className="md:text-sm text-xs">{mainData.subDescription1}</p>
                         </div>
                         <div>
-                            <h3 className={`font-bold text-base mb-2 text-[${COLORS.headingText}]`}>{mainData.subTitle2}</h3>
+                            <h3 className="font-bold text-base mb-2"
+                                style={{ color: COLORS.headingText }}>{mainData.subTitle2}</h3>
                             <p className="md:text-sm text-xs">{mainData.subDescription2}</p>
                         </div>
                     </div>

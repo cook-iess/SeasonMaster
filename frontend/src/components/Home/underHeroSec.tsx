@@ -30,19 +30,19 @@ export default function UnderHeroSec({ items }: UnderHeroProps) {
             key={item.id}
             className="gap-8 px-4 py-2 gap-y-2"
           >
-            {/* Mobile icon (24px) */}
-              <div className="md:hidden block">
-                <IconByTitle title={item.title} size={24} />
-              </div>
-              {/* Desktop icon (40px) */}
-              <div className="md:block hidden">
-                <IconByTitle title={item.title} size={40} />
-              </div>
+            <div className="md:hidden block">
+              <IconByTitle title={item.title} size={24} />
+            </div>
+            <div className="md:block hidden">
+              <IconByTitle title={item.title} size={40} />
+            </div>
             <div className="text-left">
-              <h3 className={`font-bold md:text-xl text-lg leading-tight mt-2 pb-1 text-[${COLORS.headingText}]`}>
+              <h3 className="font-bold md:text-xl text-lg leading-tight mt-2 pb-1"
+                style={{ color: COLORS.headingText }}>
                 {item.title.trim()}
               </h3>
-              <p className={`text-[${COLORS.bodyText}] md:text-sm text-xs leading-relaxed`}>
+              <p className="md:text-sm text-xs leading-relaxed"
+                style={{ color: COLORS.bodyText }}>
                 {item.description}
               </p>
             </div>

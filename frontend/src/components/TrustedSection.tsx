@@ -12,16 +12,18 @@ export default function TrustedSection({ data }: TrustedSectionProps) {
 
     return (
         <section
-            className="relative w-full py-32 md:py-24 px-4 md:px-0 bg-cover bg-center"
+            className="relative w-full py-32 md:py-24 px-4 md:px-10 bg-cover bg-center"
             style={{ backgroundImage: `url(${bgImageUrl})` }}
         >
             <div className="relative z-10 flex items-center justify-center space-y-2 py-16">
                 <div className="bg-white/80 backdrop-blur-md rounded-2xl text-center w-full md:max-w-[940px] md:px-6 md:py-8 px-2 py-10 space-y-6">
                     <div className="mb-8 sm:mt-10">
-                        <h2 className={`text-[32px] md:text-5xl font-bold text-[${COLORS.headingText}] px-1 sm:px-2`}>
+                        <h2 className="text-[32px] md:text-5xl font-bold px-1 sm:px-2"
+                            style={{ color: COLORS.headingText }}>
                             {data.title}
                         </h2>
-                        <p className={`text-sm sm:text-base md:text-lg text-[${COLORS.bodyText}] max-w-2xl mx-auto px-1 sm:px-2`}>
+                        <p className="text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-1 sm:px-2"
+                            style={{ color: COLORS.bodyText }}>
                             {data.description}
                         </p>
                     </div>

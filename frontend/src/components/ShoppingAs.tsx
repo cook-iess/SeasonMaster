@@ -11,8 +11,10 @@ export default function ShoppingAs({ data }: { data: ShoppingAsData }) {
         <section className="py-18 md:px-10 px-4 pt-6 md:pt-18 md:pb-18 pb-14 max-w-[1512px] mx-auto">
             <div className="space-y-8">
                 <div className="mb-10 space-y-2">
-                    <h2 className={`md:text-3xl text-2xl md:text-[44px] font-bold text-[${COLORS.headingText}]`}>{title}</h2>
-                    <p className={`md:text-lg text-sm text-[${COLORS.bodyText}] max-w-3xl`}>{description}</p>
+                    <h2 className="md:text-3xl text-2xl md:text-[44px] font-bold"
+                        style={{ color: COLORS.headingText }}>{title}</h2>
+                    <p className="md:text-lg text-sm max-w-3xl"
+                        style={{ color: COLORS.bodyText }}>{description}</p>
                 </div>
 
                 {/* Two Cards */}
