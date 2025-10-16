@@ -19,17 +19,6 @@
       "type": "text",
       "required": true
     },
-    "buttonsIcon": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "shopping_as_lists": {
       "type": "relation",
       "relation": "oneToMany",
