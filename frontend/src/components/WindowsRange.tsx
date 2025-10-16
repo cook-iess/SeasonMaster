@@ -7,7 +7,7 @@ const Card = ({ item }: { item: WindowsRangeItem }) => {
     const altText = item.Image?.alternativeText || item.subtitle;
 
     return (
-        <div className="rounded-b-xl">
+        <div className="">
             <div className="relative h-48 w-full">
                 <Image
                     src={imageUrl}
@@ -16,9 +16,9 @@ const Card = ({ item }: { item: WindowsRangeItem }) => {
                     className="object-cover rounded-t-2xl"
                 />
             </div>
-            <div className="space-y-[10px] px-5 pt-4 pb-6 shadow-md rounded-b-xl">
+            <div className="space-y-2.5 px-5 pt-4 pb-6 shadow-md rounded-b-2xl">
                 <div className="flex justify-between items-start gap-x-[10px]">
-                    <h3 className="text-[28px] font-semibold text-[#1C3960]">
+                    <h3 className="text-[28px] font-bold text-[#1C3960]">
                         {item.subtitle}
                     </h3>
                     <svg
@@ -55,25 +55,20 @@ export default function WindowRangeSection({
     const { title, description, windows_range_lists: items } = data;
 
     return (
-        <section className="mx-auto px-4 md:px-12 md:py-18 pt-12 md:pt-18 pb-18">
+        <section className="mx-auto px-4 md:px-12 pt-12 md:pt-18 pb-18">
             <div className="max-w-[769px]">
-                <h2 className="text-3xl md:text-[44px] font-bold text-[#1C3960] pb-2">
+                <h2 className="text-[24px] md:text-[44px] font-bold text-[#1C3960]">
                     {title}
                 </h2>
-                <p className="text-lg text-[#333333] leading-relaxed">{description}</p>
+                <p className="text-sm md:text-lg text-[#333333] leading-relaxed">
+                    {description}
+                </p>
             </div>
 
-            <div className="flex flex-col gap-y-8 mt-10">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10">
-                    {items.slice(0, 3).map((item) => (
-                        <Card key={item.id} item={item} />
-                    ))}
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10">
-                    {items.slice(3, 6).map((item) => (
-                        <Card key={item.id} item={item} />
-                    ))}
-                </div>
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-10">
+                {items.map((item) => (
+                    <Card key={item.id} item={item} />
+                ))}
             </div>
         </section>
     );
