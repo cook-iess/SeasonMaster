@@ -42,7 +42,7 @@ export default function UnderHeroSec({ items }: UnderHeroProps) {
               <h3 className={`font-bold md:text-xl text-lg leading-tight mt-2 pb-1 text-[${COLORS.headingText}]`}>
                 {item.title.trim()}
               </h3>
-              <p className="text-[#333333] md:text-sm text-xs leading-relaxed">
+              <p className={`text-[${COLORS.bodyText}] md:text-sm text-xs leading-relaxed`}>
                 {item.description}
               </p>
             </div>

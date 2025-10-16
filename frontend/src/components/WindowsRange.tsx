@@ -38,7 +38,7 @@ const Card = ({ item }: { item: WindowsRangeItem }) => {
                     </svg>
                 </div>
                 <div className={`border-t-[0.2px] border-dashed border-[${COLORS.headingText}]/40`}></div>
-                <p className="mt-3 text-[#333333] text-lg  overflow-hidden" style={{
+                <p className={`mt-3 text-[${COLORS.bodyText}] text-lg  overflow-hidden`} style={{
                     display: '-webkit-box',
                     WebkitBoxOrient: 'vertical',
                     WebkitLineClamp: 2,
@@ -61,7 +61,7 @@ export default function WindowRangeSection({
                 <h2 className={`text-[24px] md:text-[44px] font-bold text-[${COLORS.headingText}]`}>
                     {title}
                 </h2>
-                <p className="text-sm md:text-lg text-[#333333] leading-relaxed">
+                <p className={`text-sm md:text-lg text-[${COLORS.bodyText}] leading-relaxed`}>
                     {description}
                 </p>
             </div>

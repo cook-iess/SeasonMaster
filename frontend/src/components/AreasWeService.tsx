@@ -56,7 +56,7 @@ export default function AreasWeService({
         <section className="px-4 md:px-12 py-12 md:py-18 max-w-[1512px] mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 lg:gap-x-14 sm:gap-y-4 items-start">
                 {/* Left Side */}
-                <div className="text-[#333333] my-auto">
+                <div className={`text-[${COLORS.bodyText}] my-auto`}>
                     <h2 className={`text-[24px] md:text-[40px] lg:text-[44px] leading-[1.2] text-[${COLORS.headingText}] font-bold py-2`}>
                         {mainData.title}
                     </h2>

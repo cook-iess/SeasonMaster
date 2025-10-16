@@ -21,7 +21,7 @@ export default function TrustedSection({ data }: TrustedSectionProps) {
                         <h2 className={`text-[32px] md:text-5xl font-bold text-[${COLORS.headingText}] px-1 sm:px-2`}>
                             {data.title}
                         </h2>
-                        <p className="text-sm sm:text-base md:text-lg text-[#333333] max-w-2xl mx-auto px-1 sm:px-2">
+                        <p className={`text-sm sm:text-base md:text-lg text-[${COLORS.bodyText}] max-w-2xl mx-auto px-1 sm:px-2`}>
                             {data.description}
                         </p>
                     </div>

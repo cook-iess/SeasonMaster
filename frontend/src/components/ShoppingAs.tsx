@@ -12,7 +12,7 @@ export default function ShoppingAs({ data }: { data: ShoppingAsData }) {
             <div className="space-y-8">
                 <div className="mb-10 space-y-2">
                     <h2 className={`md:text-3xl text-2xl md:text-[44px] font-bold text-[${COLORS.headingText}]`}>{title}</h2>
-                    <p className="md:text-lg text-sm text-[#333333] max-w-3xl">{description}</p>
+                    <p className={`md:text-lg text-sm text-[${COLORS.bodyText}] max-w-3xl`}>{description}</p>
                 </div>
 
                 {/* Two Cards */}

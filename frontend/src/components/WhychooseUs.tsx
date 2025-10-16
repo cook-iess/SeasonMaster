@@ -13,7 +13,7 @@ export default function WhyChooseSection({ data }: { data: WhyChooseData }) {
                     <div className="md:basis-[640px] md:max-w-[640px] space-y-6 flex-shrink-0">
                         <div className="space-y-2 mb-6">
                             <h2 className={`text-2xl md:text-[44px] font-bold text-[${COLORS.headingText}]`}>{title}</h2>
-                            <p className="text-sm md:text-lg text-[#333333]">{description}</p>
+                            <p className={`text-sm md:text-lg text-[${COLORS.bodyText}]`}>{description}</p>
                         </div>
                         <div className="relative h-96 w-full mt-6">
                             <Image
