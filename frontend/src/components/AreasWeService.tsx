@@ -26,7 +26,6 @@ export default function AreasWeService({
     const midlands = getRegion('Midlands');
     const south = getRegion('South');
 
-    // Keep RegionCard simple — no mobile variant
     const RegionCard = ({
         title,
         cities,
@@ -36,9 +35,8 @@ export default function AreasWeService({
         cities: string[];
         positionClasses: string;
     }) => (
-        <div className={`absolute ${positionClasses} bg-[#22B1A9] p-3 sm:p-4 rounded-lg shadow-md min-w-[140px] sm:min-w-[180px] border border-white z-10`}>
+        <div className={`absolute ${positionClasses} bg-[#22B1A9] hover:bg-[#26C7BE] duration-300 p-3 sm:p-4 rounded-lg shadow-md min-w-[140px] sm:min-w-[180px] border border-white z-10`}>
             <div className="flex items-center gap-1.5 sm:gap-2 mb-2">
-                {/* ✅ Fixed: no sm:size — just one size that works */}
                 <Location06Icon size={18} color='#FFFFFF' />
                 <h4 className="font-semibold text-sm sm:text-base text-white">{title}</h4>
             </div>
@@ -74,9 +72,8 @@ export default function AreasWeService({
                         </div>
                     </div>
 
-                    {/* Button + Rating */}
                     <div className="space-y-5">
-                        <button className="flex items-center justify-center bg-[#0284A3] mb-4 md:gap-x-3 w-full md:w-fit gap-x-2 text-white font-semibold md:px-10 md:py-4 px-8 py-3 md:rounded-lg rounded-md shadow-md hover:bg-[#026f8a] transition md:text-lg text-sm">
+                        <button className="flex items-center justify-center bg-[#0284A3] hover:bg-[#0284A3]/90 duration-300 mb-4 md:gap-x-3 w-full md:w-fit gap-x-2 text-white font-semibold md:px-10 md:py-4 px-8 py-3 md:rounded-lg rounded-md shadow-md transition md:text-lg text-sm">
                             <Location06Icon size={20} color='#FFFFFF' />
                             {mainData.buttonText}
                         </button>
@@ -103,7 +100,7 @@ export default function AreasWeService({
                     </div>
                 </div>
 
-                {/* Right Side - Map with Absolute Cards */}
+                {/* Right Side */}
                 <div className="relative w-full mt-12 lg:mt-0 h-[400px] sm:h-[450px] lg:h-[500px]">
                     <Image
                         src={mapImageUrl}
