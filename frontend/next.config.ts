@@ -9,8 +9,8 @@ let protocol = 'http';
 try {
   const url = new URL(STRAPI_URL);
   hostname = url.hostname;
-  port = url.port;
-  protocol = url.protocol.replace(':', '') as 'http' | 'https';
+  port = url.port || (url.protocol === 'https:' ? '443' : '80');
+  protocol = url.protocol.replace(':', '');
 } catch (e) {
   console.warn('Invalid STRAPI_URL, falling back to localhost:1337');
 }
@@ -19,9 +19,9 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: '*.onrender.com',
-        port: '',
+        protocol: protocol as 'http' | 'https',
+        hostname,
+        port,
         pathname: '/uploads/**',
       },
     ],
