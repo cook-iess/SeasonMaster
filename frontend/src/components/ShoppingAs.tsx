@@ -1,22 +1,5 @@
 import Image from 'next/image';
-
-interface ShoppingAsItem {
-    id: number;
-    who: string;
-    why: string;
-    description: string;
-    buttonText: string;
-    image: {
-        url: string;
-        alternativeText?: string;
-    };
-}
-
-interface ShoppingAsData {
-    title: string;
-    description: string;
-    shopping_as_lists: ShoppingAsItem[];
-}
+import { ShoppingAsData } from '@/lib/WhoBuy/type';
 
 export default function ShoppingAs({ data }: { data: ShoppingAsData }) {
     const { title, description, shopping_as_lists: items } = data;
@@ -43,9 +26,10 @@ export default function ShoppingAs({ data }: { data: ShoppingAsData }) {
                                     className="object-cover"
                                     sizes="(max-width: 768px) 100vw, 50vw"
                                 />
+                                <div className="absolute inset-0 bg-black/20"></div>
 
                                 {/* Content at bottom */}
-                                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                <div className="absolute bottom-0 left-0 right-0 p-6 text-white bg-gradient-to-t from-black/95 to-transparent">
                                     <span className="inline-block rounded text-xs md:text-base md:font-bold font-semibold  bg-[#19857F] hover:bg-[#20A69E] duration-300 px-2 md:py-2 py-1 gap-x-8">
                                         {item.who}
                                     </span>
@@ -53,9 +37,24 @@ export default function ShoppingAs({ data }: { data: ShoppingAsData }) {
                                         <h3 className="lg:text-[44px] sm:text-[32] text-[24px] font-bold mb-2">{item.why}</h3>
                                         <p className="text-base md:text-lg">{item.description}</p>
                                     </div>
-                                    <button className="flex items-center justify-center gap-2 font-semibold group/button bg-[#0284A3] hover:bg-[#0284A3]/80 duration-300 px-10 py-4 rounded-lg w-full">
+                                    <button className="flex items-center justify-center gap-2 font-semibold group/button bg-[#0284A3] hover:bg-[#0284A3]/90 duration-300 px-10 py-4 rounded-lg md:w-fit w-full">
                                         {item.buttonText}
-                                        <span className="group-hover/button:translate-x-1 transition-transform text-sm md:text-lg">→</span>
+                                        <span className="text-sm md:text-lg">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="20"
+                                                height="20"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                strokeWidth="2"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                            >
+                                                <line x1="4" y1="12" x2="16" y2="12" />
+                                                <polyline points="16 6 22 12 16 18" />
+                                            </svg>
+                                        </span>
                                     </button>
                                 </div>
                             </div>
