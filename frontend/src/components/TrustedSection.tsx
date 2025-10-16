@@ -11,38 +11,34 @@ export default function TrustedSection({ data }: TrustedSectionProps) {
 
     return (
         <section
-            className="relative w-full py-16 md:py-34 bg-cover bg-center"
+            className="relative w-full py-32 md:py-24 px-4 md:px-0 bg-cover bg-center"
             style={{ backgroundImage: `url(${bgImageUrl})` }}
         >
-            <div className="absolute inset-0"></div>
-            <div className="relative z-10 flex items-center justify-center px-4">
-                <div className="bg-white/80 backdrop-blur-lg rounded-2xl text-center w-full max-w-[940px] px-10 pb-10 pt-3">
-                    <div className="mb-6 mt-10">
-                        <h2 className="text-3xl sm:text-5xl md:text-5xl font-bold text-[#1C3960] px-2 pb-3">
+            <div className="relative z-10 flex items-center justify-center space-y-2 py-16">
+                <div className="bg-white/80 backdrop-blur-md rounded-2xl text-center w-full md:max-w-[940px] md:px-6 md:py-8 px-2 py-10 space-y-6">
+                    <div className="mb-8 sm:mt-10">
+                        <h2 className="text-[32px] md:text-5xl font-bold text-[#1C3960] px-1 sm:px-2">
                             {data.title}
                         </h2>
-                        <p className="text-base sm:text-lg text-[#333333] max-w-2xl mx-auto px-2">
+                        <p className="text-sm sm:text-base md:text-lg text-[#333333] max-w-2xl mx-auto px-1 sm:px-2">
                             {data.description}
                         </p>
                     </div>
 
-                    <div className="flex justify-center">
-                        <div className="flex flex-nowrap justify-center gap-4 sm:gap-6 w-full max-w-4xl">
-                            {data.Logos.map((logo, index) => {
-                                const isLast = index === data.Logos.length - 1;
-                                return (
-                                    <div key={logo.id} className="flex-shrink-0">
-                                        <Image
-                                            src={STRAPI_URL + logo.url}
-                                            alt={logo.alternativeText || 'Certification logo'}
-                                            width={isLast ? 161 : 213}
-                                            height={114}
-                                            className="w-auto h-[80px] sm:h-[90px] md:h-[114px] object-contain"
-                                            loading="lazy"
-                                        />
-                                    </div>
-                                );
-                            })}
+                    <div className="flex justify-center overflow-x-auto sm:overflow-x-visible">
+                        <div className="flex flex-nowrap justify-center gap-x-2 sm:gap-x-4 w-full max-w-4xl px-2">
+                            {data.Logos.map((logo) => (
+                                <div key={logo.id} className="flex-shrink flex items-center justify-center min-w-[22%] sm:min-w-[16%]">
+                                    <Image
+                                        src={STRAPI_URL + logo.url}
+                                        alt={logo.alternativeText || 'Logo'}
+                                        width={180}
+                                        height={90}
+                                        className="w-fit h-auto md:max-h-[114px] max-h-[40px] object-contain"
+                                        loading="lazy"
+                                    />
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
