@@ -36,7 +36,7 @@ export default function AreasWeService({
         cities: string[];
         positionClasses: string;
     }) => (
-        <div className={`absolute ${positionClasses} bg-[#22B1A9] hover:bg-[#26C7BE] duration-300 p-3 sm:p-4 rounded-lg shadow-md min-w-[140px] sm:min-w-[180px] border border-white z-10`}>
+        <div className={`absolute ${positionClasses} bg-[#22B1A9] hover:opacity-95 duration-300 p-3 sm:p-4 rounded-lg shadow-md min-w-[140px] sm:min-w-[180px] border border-white z-10`}>
             <div className="flex items-center gap-1.5 sm:gap-2 mb-2">
                 <Location06Icon size={18} color='#FFFFFF' />
                 <h4 className="font-semibold text-sm sm:text-base text-white">{title}</h4>

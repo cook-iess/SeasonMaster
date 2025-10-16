@@ -33,7 +33,7 @@ export default function WhyChooseSection({ data }: { data: WhyChooseData }) {
                             {cards.map((card) => (
                                 <div
                                     key={card.id}
-                                    className="space-y-2 p-4 rounded-lg bg-[#26C7BE] hover:bg-[#26C7BE]/90 duration-300 text-white"
+                                    className="space-y-2 p-4 rounded-lg bg-[#26C7BE] hover:opacity-90 duration-300 text-white"
                                 >
                                     <h3 className="text-2xl font-bold">{card.cardTitle}</h3>
                                     <p className="text-base font-light">{card.cardDescription}</p>

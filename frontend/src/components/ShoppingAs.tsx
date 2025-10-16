@@ -38,7 +38,7 @@ export default function ShoppingAs({ data }: { data: ShoppingAsData }) {
                                         <h3 className="lg:text-[44px] sm:text-[32] text-[24px] font-bold mb-2">{item.why}</h3>
                                         <p className="text-base md:text-lg">{item.description}</p>
                                     </div>
-                                    <button className="flex items-center justify-center gap-2 font-semibold group/button bg-[#0284A3] hover:opacity-90 duration-300 px-10 py-4 rounded-lg md:w-fit w-full">
+                                    <button className="flex items-center justify-center gap-2 font-semibold group/button bg-[#0284A3] hover:opacity-95 duration-300 px-10 py-4 rounded-lg md:w-fit w-full">
                                         {item.buttonText}
                                         <span className="text-sm md:text-lg">
                                             <svg
