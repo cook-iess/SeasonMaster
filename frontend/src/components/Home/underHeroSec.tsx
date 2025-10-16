@@ -1,5 +1,6 @@
 import { UnderHeroData } from '@/lib/Home/types';
 import { VolumeOffIcon, ThermometerWarmIcon, SecurityCheckIcon } from 'hugeicons-react';
+import { COLORS } from '@/lib/colors';
 
 type UnderHeroProps = {
   items: UnderHeroData[];
@@ -38,7 +39,7 @@ export default function UnderHeroSec({ items }: UnderHeroProps) {
                 <IconByTitle title={item.title} size={40} />
               </div>
             <div className="text-left">
-              <h3 className="font-bold md:text-xl text-lg leading-tight mt-2 pb-1 text-[#1C3960]">
+              <h3 className={`font-bold md:text-xl text-lg leading-tight mt-2 pb-1 text-[${COLORS.headingText}]`}>
                 {item.title.trim()}
               </h3>
               <p className="text-[#333333] md:text-sm text-xs leading-relaxed">

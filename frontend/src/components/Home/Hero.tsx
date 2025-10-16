@@ -52,7 +52,7 @@ export default function Hero({ home, rating }: HeroProps) {
 
 
                 <div className="flex flex-col sm:flex-row justify-center gap-4 md:gap-8 mt-6 md:text-lg text-sm space-y-4 md:space-y-0">
-                    <button className="bg-[#0284A3] hover:bg-[#0284A3]/90 duration-300 text-white font-semibold md:py-4 md:px-10 px-8 py-3 rounded-md md:rounded-lg shadow-lg w-fit md:w-full mx-auto">
+                    <button className="bg-[#0284A3] hover:opacity-90 duration-300 text-white font-semibold md:py-4 md:px-10 px-8 py-3 rounded-md md:rounded-lg shadow-lg w-fit md:w-full mx-auto">
                         {home.button1}
                     </button>
                     <button className="bg-transparent hover:bg-white/10 duration-300 border-2 border-white text-white font-semibold md:py-4 md:px-10 px-8 py-3 rounded-md md:rounded-lg w-fit md:w-full mx-auto">

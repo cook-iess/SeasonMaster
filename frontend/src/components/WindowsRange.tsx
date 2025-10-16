@@ -1,5 +1,6 @@
 import { WindowsRangeData, WindowsRangeItem } from '@/lib/WindowsRange/types';
 import Image from 'next/image';
+import { COLORS } from '@/lib/colors';
 
 const Card = ({ item }: { item: WindowsRangeItem }) => {
     const STRAPI_URL = process.env.STRAPI_URL || 'http://localhost:1337';
@@ -18,7 +19,7 @@ const Card = ({ item }: { item: WindowsRangeItem }) => {
             </div>
             <div className="space-y-2.5 px-5 pt-4 pb-6 shadow-md rounded-b-2xl">
                 <div className="flex justify-between items-start gap-x-[10px]">
-                    <h3 className="text-[28px] font-bold text-[#1C3960]">
+                    <h3 className={`text-[28px] font-bold text-[${COLORS.headingText}]`}>
                         {item.subtitle}
                     </h3>
                     <svg
@@ -36,7 +37,7 @@ const Card = ({ item }: { item: WindowsRangeItem }) => {
                         />
                     </svg>
                 </div>
-                <div className="border-t-[0.2px] border-dashed border-[#1C3960]/40"></div>
+                <div className={`border-t-[0.2px] border-dashed border-[${COLORS.headingText}]/40`}></div>
                 <p className="mt-3 text-[#333333] text-lg  overflow-hidden" style={{
                     display: '-webkit-box',
                     WebkitBoxOrient: 'vertical',
@@ -57,7 +58,7 @@ export default function WindowRangeSection({
     return (
         <section className="mx-auto px-4 md:px-12 pt-12 md:pt-18 pb-18">
             <div className="max-w-[769px]">
-                <h2 className="text-[24px] md:text-[44px] font-bold text-[#1C3960]">
+                <h2 className={`text-[24px] md:text-[44px] font-bold text-[${COLORS.headingText}]`}>
                     {title}
                 </h2>
                 <p className="text-sm md:text-lg text-[#333333] leading-relaxed">

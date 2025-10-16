@@ -1,5 +1,6 @@
 import { TrustedSectionData } from '@/lib/Trusted/types';
 import Image from 'next/image';
+import { COLORS } from '@/lib/colors';
 
 type TrustedSectionProps = {
     data: TrustedSectionData;
@@ -17,7 +18,7 @@ export default function TrustedSection({ data }: TrustedSectionProps) {
             <div className="relative z-10 flex items-center justify-center space-y-2 py-16">
                 <div className="bg-white/80 backdrop-blur-md rounded-2xl text-center w-full md:max-w-[940px] md:px-6 md:py-8 px-2 py-10 space-y-6">
                     <div className="mb-8 sm:mt-10">
-                        <h2 className="text-[32px] md:text-5xl font-bold text-[#1C3960] px-1 sm:px-2">
+                        <h2 className={`text-[32px] md:text-5xl font-bold text-[${COLORS.headingText}] px-1 sm:px-2`}>
                             {data.title}
                         </h2>
                         <p className="text-sm sm:text-base md:text-lg text-[#333333] max-w-2xl mx-auto px-1 sm:px-2">

@@ -3,6 +3,7 @@ import { AreasServicedData, RegionsData } from '@/lib/AreasServiced/types';
 import { GoogleRatingData } from '@/lib/Home/types';
 import { Location06Icon, Tick01Icon } from 'hugeicons-react';
 import Image from 'next/image';
+import { COLORS } from '@/lib/colors';
 
 type AreasWeServiceProps = {
     mainData: AreasServicedData;
@@ -56,24 +57,24 @@ export default function AreasWeService({
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 lg:gap-x-14 sm:gap-y-4 items-start">
                 {/* Left Side */}
                 <div className="text-[#333333] my-auto">
-                    <h2 className="text-[24px] md:text-[40px] lg:text-[44px] leading-[1.2] text-[#1C3960] font-bold py-2">
+                    <h2 className={`text-[24px] md:text-[40px] lg:text-[44px] leading-[1.2] text-[${COLORS.headingText}] font-bold py-2`}>
                         {mainData.title}
                     </h2>
                     <p className="text-base sm:text-sm mb-6">{mainData.description}</p>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 sm:gap-y-4 mt-4 mb-8">
                         <div>
-                            <h3 className="font-bold text-base mb-2 text-[#1C3960]">{mainData.subTitle1}</h3>
+                            <h3 className={`font-bold text-base mb-2 text-[${COLORS.headingText}]`}>{mainData.subTitle1}</h3>
                             <p className="md:text-sm text-xs">{mainData.subDescription1}</p>
                         </div>
                         <div>
-                            <h3 className="font-bold text-base mb-2 text-[#1C3960]">{mainData.subTitle2}</h3>
+                            <h3 className={`font-bold text-base mb-2 text-[${COLORS.headingText}]`}>{mainData.subTitle2}</h3>
                             <p className="md:text-sm text-xs">{mainData.subDescription2}</p>
                         </div>
                     </div>
 
                     <div className="space-y-5">
-                        <button className="flex items-center justify-center bg-[#0284A3] hover:bg-[#0284A3]/90 duration-300 mb-4 md:gap-x-3 w-full md:w-fit gap-x-2 text-white font-semibold md:px-10 md:py-4 px-8 py-3 md:rounded-lg rounded-md shadow-md transition md:text-lg text-sm">
+                        <button className="flex items-center justify-center bg-[#0284A3] hover:opacity-90 duration-300 mb-4 md:gap-x-3 w-full md:w-fit gap-x-2 text-white font-semibold md:px-10 md:py-4 px-8 py-3 md:rounded-lg rounded-md shadow-md transition md:text-lg text-sm">
                             <Location06Icon size={20} color='#FFFFFF' />
                             {mainData.buttonText}
                         </button>

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { ShoppingAsData } from '@/lib/WhoBuy/type';
+import { COLORS } from '@/lib/colors';
 
 export default function ShoppingAs({ data }: { data: ShoppingAsData }) {
     const { title, description, shopping_as_lists: items } = data;
@@ -10,7 +11,7 @@ export default function ShoppingAs({ data }: { data: ShoppingAsData }) {
         <section className="py-18 md:px-10 px-4 pt-6 md:pt-18 md:pb-18 pb-14 max-w-[1512px] mx-auto">
             <div className="space-y-8">
                 <div className="mb-10 space-y-2">
-                    <h2 className="md:text-3xl text-2xl md:text-[44px] font-bold text-[#1C3960]">{title}</h2>
+                    <h2 className={`md:text-3xl text-2xl md:text-[44px] font-bold text-[${COLORS.headingText}]`}>{title}</h2>
                     <p className="md:text-lg text-sm text-[#333333] max-w-3xl">{description}</p>
                 </div>
 
@@ -37,7 +38,7 @@ export default function ShoppingAs({ data }: { data: ShoppingAsData }) {
                                         <h3 className="lg:text-[44px] sm:text-[32] text-[24px] font-bold mb-2">{item.why}</h3>
                                         <p className="text-base md:text-lg">{item.description}</p>
                                     </div>
-                                    <button className="flex items-center justify-center gap-2 font-semibold group/button bg-[#0284A3] hover:bg-[#0284A3]/90 duration-300 px-10 py-4 rounded-lg md:w-fit w-full">
+                                    <button className="flex items-center justify-center gap-2 font-semibold group/button bg-[#0284A3] hover:opacity-90 duration-300 px-10 py-4 rounded-lg md:w-fit w-full">
                                         {item.buttonText}
                                         <span className="text-sm md:text-lg">
                                             <svg

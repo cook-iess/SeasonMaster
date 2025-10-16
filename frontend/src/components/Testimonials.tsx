@@ -10,6 +10,7 @@ import {
     CarouselPrevious,
     CarouselNext,
 } from "@/components/ui/carousel";
+import { COLORS } from '@/lib/colors';
 
 const jakarta = Plus_Jakarta_Sans({
     subsets: ['latin'],
@@ -81,12 +82,12 @@ export default function TestimonialsSection({
         <section className="md:px-12 md:py-18 px-4 py-8">
             <div className="mx-auto space-y-8">
                 <div className="space-y-4 md:space-y-0">
-                    <h2 className="lg:text-[44px] sm:text-3xl text-2xl font-bold text-[#1C3960] md:text-center mb-8 md:mb-12">{Header}</h2>
+                    <h2 className={`lg:text-[44px] sm:text-3xl text-2xl font-bold text-[${COLORS.headingText}] md:text-center mb-8 md:mb-12`}>{Header}</h2>
                     <div className="space-x-2 md:hidden">
                         <span className={`${jakarta.className} inline-block p-2 rounded text-sm font-bold bg-[#0284A3] text-white`}>
                             Homeowners
                         </span>
-                        <span className={`${jakarta.className} inline-block p-2 text-sm font-bold bg-[#F5F5F5] text-[#1C3960]`}>
+                        <span className={`${jakarta.className} inline-block p-2 text-sm font-bold bg-[#F5F5F5] text-[${COLORS.headingText}]`}>
                             Trade Installers
                         </span>
                     </div>
@@ -118,7 +119,7 @@ export default function TestimonialsSection({
                                             />
                                         </div>
                                         <p className="text-[#0A1422] font-light md:text-base text-sm">{item.review}</p>
-                                        <div className="border-t-[0.5px] border-[#1C3960]/20"></div>
+                                        <div className={`border-t-[0.5px] border-[${COLORS.headingText}]/20`}></div>
                                         <div className="flex justify-between md:text-sm text-xs">
                                             <p className="font-bold  text-[#152B48]">
                                                 {item.reviewer}
