@@ -8,7 +8,7 @@ export default ({ env }) => ({
     },
     cookie: {
       secure: env.bool('COOKIE_SECURE', false),
-      domain: env('COOKIE_DOMAIN', undefined),
+      // domain: env('COOKIE_DOMAIN', undefined),
     },
   },
   apiToken: {
