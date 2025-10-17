@@ -23,7 +23,7 @@ export default function WhyChooseSection({ data }: { data: WhyChooseData }) {
                         </div>
                         <div className="relative h-96 w-full mt-6">
                             <Image
-                                src={`${process.env.STRAPI_URL}${image.url}`}
+                                src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${image.url}`}
                                 alt={image.alternativeText || 'Why Choose Season Master'}
                                 fill
                                 className="object-cover rounded-lg"

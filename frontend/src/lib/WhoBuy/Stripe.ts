@@ -1,6 +1,6 @@
 // fetch ShoppingAs section
 export async function fetchShoppingAsSection() {
-  const STRAPI_URL = process.env.STRAPI_URL || 'http://localhost:1337';
+  const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || 'http://localhost:1337';
   const res = await fetch(`${STRAPI_URL}/api/shopping-asas?populate[shopping_as_lists][populate]=*`, {
       next: { revalidate: 3600 },
     });

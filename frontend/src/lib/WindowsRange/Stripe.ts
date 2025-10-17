@@ -1,5 +1,5 @@
 export async function fetchWindowsRange() {
-  const STRAPI_URL = process.env.STRAPI_URL || 'http://localhost:1337';
+  const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || 'http://localhost:1337';
   const res = await fetch(`${STRAPI_URL}/api/windows-ranges?populate[windows_range_lists][populate]=*`, {
     next: { revalidate: 3600 },
   });

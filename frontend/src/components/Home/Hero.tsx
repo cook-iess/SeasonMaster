@@ -14,7 +14,7 @@ type HeroProps = {
 };
 
 export default function Hero({ home, rating }: HeroProps) {
-    const STRAPI_URL = process.env.STRAPI_URL || 'http://localhost:1337';
+    const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || 'http://localhost:1337';
 
     const bgImageUrl = STRAPI_URL + home.background.url;
     const socialIconUrl = STRAPI_URL + rating.socialIcon.url;

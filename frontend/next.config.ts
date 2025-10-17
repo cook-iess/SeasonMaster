@@ -1,27 +1,18 @@
 import type { NextConfig } from "next";
 
-const STRAPI_URL = process.env.STRAPI_URL || 'http://localhost:1337';
-
-let hostname = 'localhost';
-let port = '1337';
-let protocol = 'http';
-
-try {
-  const url = new URL(STRAPI_URL);
-  hostname = url.hostname;
-  port = url.port || (url.protocol === 'https:' ? '443' : '80');
-  protocol = url.protocol.replace(':', '');
-} catch (e) {
-  console.warn('Invalid STRAPI_URL, falling back to localhost:1337');
-}
-
 const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: protocol as 'http' | 'https',
-        hostname,
-        port,
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '1337',
+        pathname: '/uploads/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'seasonmaster-1.onrender.com',
+        port: '',
         pathname: '/uploads/**',
       },
     ],

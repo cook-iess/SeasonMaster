@@ -23,7 +23,7 @@ export default function ShoppingAs({ data }: { data: ShoppingAsData }) {
                         <div key={item.id} className="relative group">
                             <div className="relative w-full h-[50vh] md:h-[60vh] lg:h-[600px] overflow-hidden rounded-2xl">
                                 <Image
-                                    src={`${process.env.STRAPI_URL}${item.image.url}`}
+                                    src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${item.image.url}`}
                                     alt={item.image.alternativeText || item.who}
                                     fill
                                     className="object-cover"

@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { COLORS } from '@/lib/colors';
 
 const Card = ({ item }: { item: WindowsRangeItem }) => {
-    const STRAPI_URL = process.env.STRAPI_URL || 'http://localhost:1337';
+    const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || 'http://localhost:1337';
     const imageUrl = item.Image ? STRAPI_URL + item.Image.url : '/images/fallback.jpg';
     const altText = item.Image?.alternativeText || item.subtitle;
 

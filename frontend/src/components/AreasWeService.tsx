@@ -16,7 +16,7 @@ export default function AreasWeService({
     regions,
     rating,
 }: AreasWeServiceProps) {
-    const STRAPI_URL = process.env.STRAPI_URL || 'http://localhost:1337';
+    const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || 'http://localhost:1337';
 
     const mapImageUrl = STRAPI_URL + mainData.mapimage.url;
     const googleLogoUrl = STRAPI_URL + rating.socialIcon.url;
