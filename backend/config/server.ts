@@ -1,10 +1,14 @@
 export default ({ env }) => ({
   host: env('HOST', '0.0.0.0'),
-  port: env.int('PORT', 10000),
-  url: env('PUBLIC_URL', 'https://seasonmaster-1.onrender.com'), // ← must be HTTPS
-  proxy: true,
-  trustProxy: true, // ← critical: trust X-Forwarded-* headers from Render
+  port: env.int('PORT', 1337),
   app: {
     keys: env.array('APP_KEYS'),
   },
+  webhooks: {
+    populateRelations: env.bool('WEBHOOKS_POPULATE_RELATIONS', false),
+  },
+  proxy: true,
+  url: env('PUBLIC_URL', 'https://seasonmaster-1.onrender.com'), // ← must be HTTPS
+  // trustProxy: true, // ← critical: trust X-Forwarded-* headers from Render
+  
 });
