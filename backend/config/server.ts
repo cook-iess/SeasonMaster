@@ -10,4 +10,7 @@ export default ({ env }) => ({
   proxy: true,
   trustProxy: true,
   url: env('PUBLIC_URL', 'https://seasonmaster-1.onrender.com'), 
+  koa: {
+    proxy: true, // This tells Koa to trust X-Forwarded-* headers
+  },
 });
