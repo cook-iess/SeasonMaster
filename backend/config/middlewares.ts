@@ -1,5 +1,6 @@
 export default [
   'strapi::logger',
+  'global::https-redirect',
   'strapi::errors',
   'strapi::security',
   'strapi::cors',
