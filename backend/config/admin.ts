@@ -7,8 +7,7 @@ export default ({ env }) => ({
       maxRefreshTokenLifespan: 30 * 24 * 60 * 60,
     },
     cookie: {
-      secure: env.bool('COOKIE_SECURE', true),
-      // domain: env('COOKIE_DOMAIN', undefined),
+      secure: true,
     },
   },
   apiToken: {
